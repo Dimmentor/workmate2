@@ -1,6 +1,5 @@
 from typing import List
 import csv
-
 from models import Row
 
 

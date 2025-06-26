@@ -1,6 +1,7 @@
 import os
 import sys
 import pytest
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from services.aggregations import AggregatorFactory
 from services.filters import FilterFactory
@@ -88,7 +89,7 @@ def test_invalid_where(where):
 
 @pytest.mark.parametrize("aggregate", [
     "badformat",
-    "rating=median",
+    "rating=bad",
 ])
 def test_invalid_aggregate(aggregate):
     with pytest.raises(Exception):
