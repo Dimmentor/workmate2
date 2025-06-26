@@ -14,10 +14,10 @@ def read_csv(file_path: str) -> List[Row]:
         for row in reader:
             for k, v in row.items():
                 if isinstance(v, str) and ',' in v:
-                    v_mod = v.replace(',', '.')
+                    v_modded = v.replace(',', '.')
                     try:
-                        float(v_mod)
-                        row[k] = v_mod
+                        float(v_modded)
+                        row[k] = v_modded
                     except ValueError:
                         row[k] = v
             rows.append(Row(row))
